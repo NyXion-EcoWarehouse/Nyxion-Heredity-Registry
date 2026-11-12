@@ -3,14 +3,20 @@
   "last_updated": "2026-11-12T00:00:00Z",
   "plugins": [
     {
-      "id": "official-example-plugin",
-      "name": "官方示例插件",
-      "author": "NyXion Official",
-      "description": "一个用于测试总线注入机制的最小化示例插件，不含任何私有协议。",
+      "name": "官方示例适配器",
+      "description": "一个用于演示标准协议桥接的官方最小化示例。",
       "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "name": "NyXion Official",
+        "github": "https://github.com/NyXion-EcoWarehouse"
+      },
+      "min_heredity_version": "1.0.0",
+      "permissions": ["net.connect"],
       "repo_url": "https://github.com/NyXion-EcoWarehouse/Nyxion-Example-Plugin",
-      "download_url": "https://github.com/NyXion-EcoWarehouse/Nyxion-Example-Plugin/releases/download/v1.0.0/plugin.wasm",
+      "download_url": "https://github.com/.../plugin.wasm",
       "hash_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "active",
       "tags": ["official", "example"]
     }
   ]
