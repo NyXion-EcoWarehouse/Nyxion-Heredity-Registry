@@ -1,0 +1,31 @@
+name: Auto Format and Validate Registry
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'plugins.json'
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Validation & Auto ID Generation
+        run: node .github/scripts/validate.js
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate plugin IDs and sort registry [skip ci]"
+          file_pattern: 'plugins.json'
